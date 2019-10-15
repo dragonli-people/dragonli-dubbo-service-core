@@ -11,6 +11,8 @@
 	<artifactId>dragonli-dubbo-service-core</artifactId>
 	<packaging>jar</packaging>
 	<name>dragonli-dubbo-service-core</name>
+	<version>1.0</version>
+
 	<dependencies>
 
 
