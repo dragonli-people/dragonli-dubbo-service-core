@@ -7,17 +7,9 @@ import com.alibaba.dubbo.config.ApplicationConfig;
 import com.alibaba.dubbo.config.ProtocolConfig;
 import com.alibaba.dubbo.config.RegistryConfig;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.web.server.ConfigurableWebServerFactory;
 import org.springframework.boot.web.server.WebServerFactoryCustomizer;
 import org.springframework.context.annotation.Bean;
-import org.springframework.http.converter.HttpMessageConverter;
-import org.springframework.http.converter.json.MappingJackson2HttpMessageConverter;
-import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
-import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
-import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
-
-import java.util.List;
 
 /**
  * @author kangzhijie
@@ -155,27 +147,6 @@ public class DubboApplicationBase implements WebServerFactoryCustomizer<Configur
         return new ObjectMapper();
     }
 
-    @Bean
-    public WebMvcConfigurer webMvcConfigurer(@Autowired ObjectMapper objectMapper) {
-        return new WebMvcConfigurerAdapter() {
-            /**
-             * Keep /static/ prefix
-             */
-            @Override
-            public void addResourceHandlers(ResourceHandlerRegistry registry) {
-                super.addResourceHandlers(registry);
-                registry.addResourceHandler("/static/**").addResourceLocations("classpath:/static/");
-            }
-
-            @Override
-            public void configureMessageConverters(List<HttpMessageConverter<?>> converters) {
-                final MappingJackson2HttpMessageConverter converter = new MappingJackson2HttpMessageConverter();
-                converter.setObjectMapper(objectMapper);
-                converters.add(converter);
-                super.configureMessageConverters(converters);
-            }
-        };
-    }
 
 
     /**
