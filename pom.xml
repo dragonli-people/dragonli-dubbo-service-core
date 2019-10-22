@@ -5,13 +5,13 @@
 	<parent>
 		<groupId>org.dragonli.service</groupId>
 		<artifactId>parent</artifactId>
-		<version>1.0</version>
+		<version>1.0.1</version>
 	</parent>
 	
 	<artifactId>dragonli-dubbo-service-core</artifactId>
 	<packaging>jar</packaging>
 	<name>dragonli-dubbo-service-core</name>
-	<version>1.0</version>
+	<version>1.0.1</version>
 
 	<description>base of dragonli dubbo service project</description>
 	<url>https://github.com/dragonli-people/dragonli-dubbo-service-core</url>
