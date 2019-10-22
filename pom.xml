@@ -143,7 +143,5 @@
 				</executions>
 			</plugin>
 		</plugins>
-
-		<finalName>service-core</finalName>
 	</build>
 </project>
