@@ -47,13 +47,7 @@
 				</exclusion>
 			</exclusions>
 		</dependency>
-		 <!--
-		<dependency>
-			<groupId>com.yyzs.crypto</groupId>
-			<artifactId>netty-core</artifactId>
-			<version>1.0</version>
-		</dependency>
-		-->
+
 	</dependencies>
 	
 
